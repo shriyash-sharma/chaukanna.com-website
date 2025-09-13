@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, MessageCircle, Send } from 'lucide-react';
-import { submitContactForm } from '@/lib/supabase';
+// import { submitContactForm } from '@/lib/supabase';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -29,8 +29,17 @@ export default function ContactForm() {
     setSubmitStatus('idle');
 
     try {
-      const result = await submitContactForm(formData);
-      if (result.success) {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
         setSubmitStatus('success');
         setFormData({
           name: '',
