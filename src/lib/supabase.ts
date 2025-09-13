@@ -14,7 +14,7 @@ export async function submitContactForm(formData: {
 }) {
   try {
     const { data, error } = await supabase
-      .from('contact_submissions')
+      .from('contacts')
       .insert([formData]);
 
     if (error) throw error;
@@ -28,11 +28,11 @@ export async function submitContactForm(formData: {
 export async function logInteraction(type: 'whatsapp' | 'call' | 'email', details?: any) {
   try {
     const { data, error } = await supabase
-      .from('interaction_logs')
+      .from('click_logs')
       .insert([{
-        type,
+        button_type: type,
         details,
-        timestamp: new Date().toISOString(),
+        created_at: new Date().toISOString(),
         user_agent: typeof window !== 'undefined' ? window.navigator.userAgent : null
       }]);
 
