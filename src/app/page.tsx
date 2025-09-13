@@ -338,4 +338,4 @@ export default function HomePage() {
       </section>
     </div>
   );
-}
+}// Environment variables updated - triggering redeployment
