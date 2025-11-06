@@ -16,6 +16,8 @@ const withPWA = require('next-pwa')({
       },
     },
   ],
+  // Disable service worker in development completely
+  sw: process.env.NODE_ENV === 'development' ? false : 'sw.js',
 });
 
 /** @type {import('next').NextConfig} */

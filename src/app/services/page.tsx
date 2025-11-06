@@ -91,7 +91,7 @@ export default function ServicesPage() {
             
             <div className="text-center">
               <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-orange-600 font-bold text-2xl">500+</span>
+                <span className="text-orange-600 font-bold text-2xl">5000+</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Happy Customers</h3>
               <p className="text-gray-600">Satisfied customers across Pune</p>

@@ -43,12 +43,12 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-xl font-bold">Chaukanna</h3>
-                <p className="text-sm text-gray-400">CCTV & Home Automation</p>
+                <p className="text-sm text-gray-400">By Shri CCTV & Home Automation Services</p>
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
               Professional CCTV installation, AMC, fire alarm systems, and smart home automation services in Pune. 
-              Trusted by 500+ customers for reliable security solutions.
+              Trusted by 5000+ customers for reliable security solutions.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
@@ -113,8 +113,8 @@ export default function Footer() {
               <div className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-orange-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-300 text-sm">+91 98765 43210</p>
-                  <p className="text-gray-300 text-sm">+91 98765 43211</p>
+                  <p className="text-gray-300 text-sm">+91 70209 48981</p>
+                  <p className="text-gray-300 text-sm">+91 83906 96046</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
@@ -128,8 +128,8 @@ export default function Footer() {
                 <MapPin className="w-5 h-5 text-orange-400 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-gray-300 text-sm">
-                    123 Business Park,<br />
-                    Pune, Maharashtra 411001
+                  Shop No 13, Satya Plaza Building,<br />
+                    Pune, Maharashtra 412207
                   </p>
                 </div>
               </div>
@@ -148,7 +148,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-400 text-sm">
-              © {currentYear} Chaukanna CCTV & Home Automation Services. All rights reserved.
+              © {currentYear} Chaukanna By Shri CCTV & Home Automation Services Services. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <Link href="/privacy" className="text-gray-400 hover:text-orange-400 transition-colors">

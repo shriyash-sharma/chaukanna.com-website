@@ -3,18 +3,18 @@ import Image from 'next/image';
 import { CheckCircle, Award, Users, Clock, Shield, Target } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Us - Chaukanna CCTV & Home Automation Services in Pune',
-  description: 'Learn about Chaukanna, Pune\'s trusted CCTV and home automation service provider. 5+ years experience, 500+ happy customers, 24/7 support.',
+  title: 'About Us - Chaukanna By Shri CCTV & Home Automation Services Services in Pune',
+  description: 'Learn about Chaukanna, Pune\'s trusted CCTV and home automation service provider. 5+ years experience, 5000+ happy customers, 24/7 support.',
   keywords: 'about chaukanna, CCTV company Pune, home automation experts, security services Pune, company history',
   openGraph: {
-    title: 'About Us - Chaukanna CCTV & Home Automation Services in Pune',
-    description: 'Learn about Chaukanna, Pune\'s trusted CCTV and home automation service provider. 5+ years experience, 500+ happy customers, 24/7 support.',
+    title: 'About Us - Chaukanna By Shri CCTV & Home Automation Services Services in Pune',
+    description: 'Learn about Chaukanna, Pune\'s trusted CCTV and home automation service provider. 5+ years experience, 5000+ happy customers, 24/7 support.',
   },
 };
 
 export default function AboutPage() {
   const stats = [
-    { icon: Users, value: '500+', label: 'Happy Customers' },
+    { icon: Users, value: '5000+', label: 'Happy Customers' },
     { icon: Award, value: '5+', label: 'Years Experience' },
     { icon: Shield, value: '1000+', label: 'Systems Installed' },
     { icon: Clock, value: '24/7', label: 'Support Available' },
@@ -127,7 +127,7 @@ export default function AboutPage() {
             <h2 className="text-4xl font-bold text-gray-900 mb-8">Our Story</h2>
             <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
               <p className="mb-6">
-                Founded in 2019, Chaukanna CCTV & Home Automation Services began with a simple mission: 
+                Founded in 2019, Chaukanna By Shri CCTV & Home Automation Services Services began with a simple mission: 
                 to provide reliable, affordable, and cutting-edge security solutions to the people of Pune. 
                 What started as a small team of passionate technicians has grown into one of the city's 
                 most trusted security service providers.

@@ -62,7 +62,7 @@ export default function ContactForm() {
     {
       icon: Phone,
       title: 'Phone',
-      details: ['+91 98765 43210', '+91 98765 43211'],
+      details: ['+91 70209 48981', '+91 83906 96046'],
       action: 'tel:+918888696046'
     },
     {
@@ -74,7 +74,7 @@ export default function ContactForm() {
     {
       icon: MapPin,
       title: 'Address',
-      details: ['123 Business Park', 'Pune, Maharashtra 411001'],
+      details: ['Shop No 13, Satya Plaza Building,', 'Khandve Nagar, Wagholi, Pune, Maharashtra 412207'],
       action: 'https://maps.google.com/?q=Pune+Maharashtra'
     },
     {
@@ -123,7 +123,7 @@ export default function ContactForm() {
               
               {submitStatus === 'success' && (
                 <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg mb-6">
-                  Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+                  Thank you! Your message has been sent successfully. We&apos;ll get back to you within 24 hours.
                 </div>
               )}
               
@@ -241,7 +241,7 @@ export default function ContactForm() {
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
                 <p className="text-lg text-gray-600 mb-8">
-                  We're here to help you with all your security and automation needs. 
+                  We&apos;re here to help you with all your security and automation needs. 
                   Reach out to us through any of the following channels.
                 </p>
               </div>
@@ -317,7 +317,7 @@ export default function ContactForm() {
               <div className="text-center">
                 <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-gray-700 mb-2">Interactive Map</h3>
-                <p className="text-gray-600 mb-4">123 Business Park, Pune, Maharashtra 411001</p>
+                <p className="text-gray-600 mb-4">Shop No 13, Satya Plaza Building, Pune, Maharashtra 412207</p>
                 <a
                   href="https://maps.google.com/?q=Pune+Maharashtra"
                   target="_blank"
@@ -395,7 +395,7 @@ export default function ContactForm() {
             Ready to Get Started?
           </h2>
           <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
-            Don't wait to secure your property. Contact us today for a free consultation and quote.
+            Don&apos;t wait to secure your property. Contact us today for a free consultation and quote.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
