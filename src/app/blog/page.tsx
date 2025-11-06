@@ -5,7 +5,7 @@ import { Calendar, User, ArrowRight } from 'lucide-react';
 import { getAllBlogPosts } from '@/data/blogPosts';
 
 export const metadata: Metadata = {
-  title: 'Blog - CCTV & Home Automation Tips, Guides & News',
+  title: 'Blog - By Shri CCTV & Home Automation Services Tips, Guides & News',
   description: 'Expert insights on CCTV installation, home automation, security systems, and maintenance tips. Stay updated with the latest trends in security technology.',
   keywords: 'CCTV blog, home automation tips, security guides, maintenance advice, technology trends',
 };

@@ -1,4 +1,4 @@
-# Chaukanna - CCTV & Home Automation Services Website
+# Chaukanna - By Shri CCTV & Home Automation Services Services Website
 
 A complete SEO-optimized, mobile-friendly website for Shri CCTV And Home Automation Services built with Next.js 14, TailwindCSS, and PWA support.
 
@@ -214,4 +214,4 @@ For technical support or questions about this website, contact the development t
 
 ## License
 
-This project is proprietary software for Chaukanna CCTV & Home Automation Services.
+This project is proprietary software for Chaukanna By Shri CCTV & Home Automation Services Services.

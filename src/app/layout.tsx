@@ -11,14 +11,14 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
-    default: 'Chaukanna - CCTV & Home Automation Services in Pune',
-    template: '%s | Chaukanna CCTV & Home Automation'
+    default: 'Chaukanna - By Shri CCTV & Home Automation Services Services in Pune',
+    template: '%s | Chaukanna By Shri CCTV & Home Automation Services'
   },
-  description: 'Professional CCTV installation, AMC, fire alarm systems, biometric attendance, and smart home automation services in Pune. Trusted by 500+ customers.',
+  description: 'Professional CCTV installation, AMC, fire alarm systems, biometric attendance, and smart home automation services in Pune. Trusted by 5000+ customers.',
   keywords: 'CCTV installation Pune, home automation Pune, fire alarm systems, biometric attendance, video door phone, access control, public address systems',
-  authors: [{ name: 'Chaukanna CCTV & Home Automation' }],
-  creator: 'Chaukanna CCTV & Home Automation',
-  publisher: 'Chaukanna CCTV & Home Automation',
+  authors: [{ name: 'Chaukanna By Shri CCTV & Home Automation Services' }],
+  creator: 'Chaukanna By Shri CCTV & Home Automation Services',
+  publisher: 'Chaukanna By Shri CCTV & Home Automation Services',
   formatDetection: {
     email: false,
     address: false,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_IN',
     url: 'https://chaukanna.com',
-    title: 'Chaukanna - CCTV & Home Automation Services in Pune',
+    title: 'Chaukanna - By Shri CCTV & Home Automation Services Services in Pune',
     description: 'Professional CCTV installation, AMC, fire alarm systems, biometric attendance, and smart home automation services in Pune.',
     siteName: 'Chaukanna',
     images: [
@@ -40,13 +40,13 @@ export const metadata: Metadata = {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Chaukanna CCTV & Home Automation Services',
+        alt: 'Chaukanna By Shri CCTV & Home Automation Services Services',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Chaukanna - CCTV & Home Automation Services in Pune',
+    title: 'Chaukanna - By Shri CCTV & Home Automation Services Services in Pune',
     description: 'Professional CCTV installation, AMC, fire alarm systems, biometric attendance, and smart home automation services in Pune.',
     images: ['/images/og-image.jpg'],
   },

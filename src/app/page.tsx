@@ -29,7 +29,7 @@ export default function HomePage() {
   ];
 
   const stats = [
-    { icon: Users, value: '500+', label: 'Happy Customers' },
+    { icon: Users, value: '5000+', label: 'Happy Customers' },
     { icon: Shield, value: '1000+', label: 'Systems Installed' },
     { icon: Clock, value: '24/7', label: 'Support Available' },
     { icon: Award, value: '5+', label: 'Years Experience' },
@@ -45,11 +45,11 @@ export default function HomePage() {
               <div className="space-y-4">
                 <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   Professional{' '}
-                  <span className="text-orange-600">CCTV & Home Automation</span>{' '}
+                  <span className="text-orange-600">By Shri CCTV & Home Automation Services</span>{' '}
                   Services in Pune
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Trusted by 500+ customers for reliable security solutions. From CCTV installation 
+                  Trusted by 5000+ customers for reliable security solutions. From CCTV installation 
                   to smart home automation, we provide comprehensive security services across Pune.
                 </p>
               </div>
@@ -254,7 +254,7 @@ export default function HomePage() {
               <div className="bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl p-8">
                 <div className="text-center">
                   <div className="w-24 h-24 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-white font-bold text-3xl">500+</span>
+                    <span className="text-white font-bold text-3xl">5000+</span>
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">Happy Customers</h3>
                   <p className="text-gray-600 mb-6">

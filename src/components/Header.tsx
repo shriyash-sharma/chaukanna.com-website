@@ -65,7 +65,7 @@ export default function Header() {
             </div>
             <div>
               <h1 className="text-xl font-bold text-gray-900">Chaukanna</h1>
-              <p className="text-sm text-gray-600">CCTV & Home Automation</p>
+              <p className="text-sm text-gray-600">By Shri CCTV & Home Automation Services</p>
             </div>
           </Link>
 
