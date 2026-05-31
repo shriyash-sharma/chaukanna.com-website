@@ -121,20 +121,32 @@ export const ORGANIZATION_JSON_LD = {
  *
  * NEXT_PUBLIC_GOOGLE_REVIEW_URL  — Full Google Business Profile review link
  *                                  (e.g. https://g.page/r/.../review).
- *                                  Falls back to a Google Maps search URL.
+ *                                  Falls back to the real Chaukanna GBP review link.
  * NEXT_PUBLIC_GOOGLE_PROFILE_URL — GMB profile page (optional, for "View on Google").
  * NEXT_PUBLIC_GSC_VERIFICATION   — Google Search Console verification token.
  */
-const FALLBACK_REVIEW_URL =
-  'https://www.google.com/maps/search/?api=1&query=Chaukanna+CCTV+Pune';
+const FALLBACK_REVIEW_URL = 'https://g.page/r/CSY-j7EdwJfHEBM/review';
+const FALLBACK_PROFILE_URL = 'https://share.google/t5wLNpLsrOvXEyx6r';
 
 export const GOOGLE_REVIEW_URL: string =
   process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL || FALLBACK_REVIEW_URL;
 
 export const GOOGLE_PROFILE_URL: string =
-  process.env.NEXT_PUBLIC_GOOGLE_PROFILE_URL || GOOGLE_REVIEW_URL;
+  process.env.NEXT_PUBLIC_GOOGLE_PROFILE_URL || FALLBACK_PROFILE_URL;
 
 export const GSC_VERIFICATION: string =
   process.env.NEXT_PUBLIC_GSC_VERIFICATION ||
   'rBKh6dBI9PmsrIK_jb0ZWPdjPZuR35UElpPxsSYvu8g';
+
+/**
+ * Public Google rating snapshot — sourced from the verified GBP listing
+ * "Shri Electronics – CCTV And Security Systems Supplier And Installation
+ * Services, Wagholi". Update these as the listing changes. Used in the
+ * trust strip on /reviews and may also seed AggregateRating schema later.
+ */
+export const GOOGLE_RATING = {
+  value: 4.8,
+  count: 184,
+} as const;
+
 

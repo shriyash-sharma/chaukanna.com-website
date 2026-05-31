@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Star, ExternalLink, MessageCircle, ShieldCheck, FileText, Calendar, Wrench } from 'lucide-react';
 import { buildMetadata } from '@/lib/seo';
-import { GOOGLE_REVIEW_URL, GOOGLE_PROFILE_URL } from '@/lib/branding';
+import { GOOGLE_REVIEW_URL, GOOGLE_PROFILE_URL, GOOGLE_RATING } from '@/lib/branding';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import CTAButtons from '@/components/CTAButtons';
 
@@ -40,6 +40,41 @@ export default function ReviewsPage() {
       </section>
 
       <div className="container mx-auto px-4 py-10 space-y-8">
+        {/* Google rating snapshot — sourced from verified GBP listing */}
+        <a
+          href={GOOGLE_PROFILE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block bg-white rounded-2xl border border-gray-200 p-5 sm:p-6 hover:shadow-md transition-shadow"
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+            <div className="flex items-center gap-3">
+              <span className="text-4xl font-bold text-gray-900">{GOOGLE_RATING.value.toFixed(1)}</span>
+              <div className="flex flex-col">
+                <div className="flex" aria-label={`${GOOGLE_RATING.value} out of 5`}>
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star
+                      key={i}
+                      className={`w-5 h-5 ${i <= Math.round(GOOGLE_RATING.value) ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
+                      aria-hidden
+                    />
+                  ))}
+                </div>
+                <span className="text-xs text-gray-600 mt-1">on Google</span>
+              </div>
+            </div>
+            <div className="flex-1">
+              <p className="text-base sm:text-lg font-semibold text-gray-900">
+                Rated {GOOGLE_RATING.value} / 5 by {GOOGLE_RATING.count}+ Google reviewers
+              </p>
+              <p className="text-sm text-gray-600">
+                Real, public, verifiable reviews on our Google Business Profile.
+              </p>
+            </div>
+            <ExternalLink className="w-5 h-5 text-gray-400 hidden sm:block" aria-hidden />
+          </div>
+        </a>
+
         {/* Verifiable trust signals — no fake claims */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
           {[
