@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ServicePageEnhancements from '@/components/ServicePageEnhancements';
 
 export const metadata: Metadata = {
   title: 'Video Door Phone Systems in Pune - Smart Intercom Solutions',
@@ -38,6 +39,7 @@ export default function VideoDoorPhonePage() {
           </a>
         </div>
       </section>
+      <ServicePageEnhancements slug="/video-door-phone" />
     </div>
   );
 }

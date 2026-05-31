@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 // import { Resend } from 'resend';
 import { supabase } from '@/lib/supabase';
+import { sendContactEmail } from '@/lib/email';
 
 // const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -35,6 +36,9 @@ export async function POST(request: NextRequest) {
 
     console.log('✅ Contact form saved to Supabase successfully!');
     console.log('📊 Database response:', dbData);
+
+    // Fire-and-forget email notification (won't block the response)
+    void sendContactEmail({ name, email, phone, message });
 
     // Email functionality commented out temporarily
     // TODO: Add email functionality later if needed

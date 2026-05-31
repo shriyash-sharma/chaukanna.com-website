@@ -2,7 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { MessageCircle, Phone, Mail, X } from 'lucide-react';
-import { logInteraction } from '@/lib/supabase';
+import {
+  buildTelLink,
+  buildWhatsAppLink,
+  trackEvent,
+} from '@/lib/analytics';
 
 export default function FloatingButtons() {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,18 +25,18 @@ export default function FloatingButtons() {
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
-  const handleWhatsAppClick = async () => {
-    await logInteraction('whatsapp', { timestamp: new Date().toISOString() });
-    window.open('https://wa.me/918888696046?text=Hi, I am interested in your CCTV and home automation services.', '_blank');
+  const handleWhatsAppClick = () => {
+    trackEvent('whatsapp_click', { source: 'floating_button' });
+    window.open(buildWhatsAppLink(), '_blank', 'noopener,noreferrer');
   };
 
-  const handleCallClick = async () => {
-    await logInteraction('call', { timestamp: new Date().toISOString() });
-    window.location.href = 'tel:+918888696046';
+  const handleCallClick = () => {
+    trackEvent('phone_call', { source: 'floating_button' });
+    window.location.href = buildTelLink();
   };
 
-  const handleEmailClick = async () => {
-    await logInteraction('email', { timestamp: new Date().toISOString() });
+  const handleEmailClick = () => {
+    trackEvent('email_click', { source: 'floating_button' });
     setShowContactForm(true);
   };
 
@@ -40,8 +44,8 @@ export default function FloatingButtons() {
 
   return (
     <>
-      {/* Floating Buttons */}
-      <div className="fixed bottom-6 right-6 z-50 space-y-3">
+      {/* Floating Buttons (hidden on mobile — StickyCTABar covers mobile) */}
+      <div className="hidden md:flex fixed bottom-6 right-6 z-50 flex-col space-y-3">
         {/* WhatsApp Button */}
         <button
           onClick={handleWhatsAppClick}

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { CheckCircle, Shield, Clock, Wrench, Phone } from 'lucide-react';
+import ServicePageEnhancements from '@/components/ServicePageEnhancements';
 
 export const metadata: Metadata = {
   title: 'CCTV AMC Services in Pune - Annual Maintenance Contract',
@@ -315,6 +316,7 @@ export default function CCTVAMCPage() {
           </div>
         </div>
       </section>
+      <ServicePageEnhancements slug="/cctv-amc" />
     </div>
   );
 }

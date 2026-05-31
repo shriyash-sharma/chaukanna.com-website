@@ -5,13 +5,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 import { BRAND_ASSETS, SITE } from '@/lib/branding';
+import { trackEvent, buildTelLink, buildWhatsAppLink } from '@/lib/analytics';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Service Areas', href: '/service-areas' },
+    { name: 'Calculator', href: '/cctv-cost-calculator' },
+    { name: 'FAQs', href: '/faqs' },
     { name: 'About', href: '/about' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
@@ -37,14 +41,22 @@ export default function Header() {
           <div className="flex flex-wrap items-center justify-between text-sm">
             <div className="flex items-center space-x-4">
               <div className="flex items-center">
-                <Phone className="w-4 h-4 mr-1" />
-                <a href="tel:+918888696046" className="hover:underline">
+                <Phone className="w-4 h-4 mr-1" aria-hidden />
+                <a
+                  href={buildTelLink()}
+                  onClick={() => trackEvent('phone_call', { source: 'header_topbar' })}
+                  className="hover:underline"
+                >
                   +91 88886 96046
                 </a>
               </div>
               <div className="flex items-center">
-                <Mail className="w-4 h-4 mr-1" />
-                <a href="mailto:info@chaukanna.com" className="hover:underline">
+                <Mail className="w-4 h-4 mr-1" aria-hidden />
+                <a
+                  href="mailto:info@chaukanna.com"
+                  onClick={() => trackEvent('email_click', { source: 'header_topbar' })}
+                  className="hover:underline"
+                >
                   info@chaukanna.com
                 </a>
               </div>
@@ -71,8 +83,8 @@ export default function Header() {
               className="w-10 h-10"
             />
             <div>
-              <h1 className="text-xl font-bold text-gray-900">{SITE.name}</h1>
-              <p className="text-sm text-gray-600">{SITE.tagline}</p>
+              <span className="block text-xl font-bold text-gray-900">{SITE.name}</span>
+              <span className="block text-sm text-gray-600">{SITE.tagline}</span>
             </div>
           </Link>
 
@@ -112,10 +124,19 @@ export default function Header() {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
+            <Link
+              href="/book-site-survey"
+              onClick={() => trackEvent('cta_click', { source: 'header_desktop_survey' })}
+              className="bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              Free Survey
+            </Link>
             <a
-              href="https://wa.me/918888696046"
+              href={buildWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent('whatsapp_click', { source: 'header_desktop' })}
+              aria-label="WhatsApp Chaukanna"
               className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center"
             >
               <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -124,7 +145,9 @@ export default function Header() {
               WhatsApp
             </a>
             <a
-              href="tel:+918888696046"
+              href={buildTelLink()}
+              onClick={() => trackEvent('phone_call', { source: 'header_desktop' })}
+              aria-label="Call Chaukanna"
               className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors"
             >
               Call Now
@@ -134,9 +157,11 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-expanded={isMenuOpen}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             className="lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100"
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? <X className="w-6 h-6" aria-hidden /> : <Menu className="w-6 h-6" aria-hidden />}
           </button>
         </div>
 
@@ -170,16 +195,25 @@ export default function Header() {
                 </div>
               </div>
               <div className="px-4 pt-4 space-y-2">
+                <Link
+                  href="/book-site-survey"
+                  onClick={() => { setIsMenuOpen(false); trackEvent('cta_click', { source: 'header_mobile_survey' }); }}
+                  className="block w-full bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors text-center"
+                >
+                  Book Free Site Survey
+                </Link>
                 <a
-                  href="https://wa.me/918888696046"
+                  href={buildWhatsAppLink()}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackEvent('whatsapp_click', { source: 'header_mobile_menu' })}
                   className="block w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors text-center"
                 >
                   WhatsApp
                 </a>
                 <a
-                  href="tel:+918888696046"
+                  href={buildTelLink()}
+                  onClick={() => trackEvent('phone_call', { source: 'header_mobile_menu' })}
                   className="block w-full bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors text-center"
                 >
                   Call Now

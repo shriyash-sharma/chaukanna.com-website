@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
+import StickyCTABar from '@/components/StickyCTABar';
 import { Analytics } from '@vercel/analytics/react';
 import Script from 'next/script';
 import {
@@ -11,12 +12,21 @@ import {
   METADATA_ICONS,
   SOCIAL_SHARE_IMAGE,
   ORGANIZATION_JSON_LD,
+  GSC_VERIFICATION,
 } from '@/lib/branding';
+import { LOCAL_BUSINESS_SCHEMA } from '@/lib/seo';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 export const viewport: Viewport = {
   themeColor: SITE.themeColor,
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export const metadata: Metadata = {
@@ -41,7 +51,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   manifest: '/manifest.json',
-  icons: METADATA_ICONS,
+  icons: METADATA_ICONS as Metadata['icons'],
   appleWebApp: {
     capable: true,
     title: SITE.name,
@@ -80,9 +90,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code',
-  },
+  verification: GSC_VERIFICATION
+    ? { google: GSC_VERIFICATION }
+    : undefined,
 };
 
 export default function RootLayout({
@@ -93,13 +103,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* Organization structured data */}
+        {/* Organization + LocalBusiness structured data */}
         <Script
           id="organization-jsonld"
           type="application/ld+json"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(ORGANIZATION_JSON_LD),
+          }}
+        />
+        <Script
+          id="localbusiness-jsonld"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(LOCAL_BUSINESS_SCHEMA),
           }}
         />
 
@@ -128,7 +146,7 @@ export default function RootLayout({
         {process.env.NEXT_PUBLIC_TAWK_ID && (
           <Script
             id="tawk-to"
-            strategy="afterInteractive"
+            strategy="lazyOnload"
             dangerouslySetInnerHTML={{
               __html: `
                 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -149,6 +167,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <FloatingButtons />
+        <StickyCTABar />
         <Analytics />
       </body>
     </html>

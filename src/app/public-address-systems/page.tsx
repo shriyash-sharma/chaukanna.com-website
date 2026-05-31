@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ServicePageEnhancements from '@/components/ServicePageEnhancements';
 
 export const metadata: Metadata = {
   title: 'Public Address Systems in Pune - PA Systems for Commercial Buildings',
@@ -38,6 +39,7 @@ export default function PublicAddressSystemsPage() {
           </a>
         </div>
       </section>
+      <ServicePageEnhancements slug="/public-address-systems" />
     </div>
   );
 }

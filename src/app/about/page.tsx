@@ -4,18 +4,18 @@ import { CheckCircle, Award, Users, Clock, Shield, Target } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About Us - Chaukanna By Shri CCTV & Home Automation Services Services in Pune',
-  description: 'Learn about Chaukanna, Pune\'s trusted CCTV and home automation service provider. 5+ years experience, 5000+ happy customers, 24/7 support.',
+  description: 'Learn about Chaukanna, Pune\'s trusted CCTV and home automation service provider. 8+ years experience, 5000+ happy customers, 24/7 support.',
   keywords: 'about chaukanna, CCTV company Pune, home automation experts, security services Pune, company history',
   openGraph: {
     title: 'About Us - Chaukanna By Shri CCTV & Home Automation Services Services in Pune',
-    description: 'Learn about Chaukanna, Pune\'s trusted CCTV and home automation service provider. 5+ years experience, 5000+ happy customers, 24/7 support.',
+    description: 'Learn about Chaukanna, Pune\'s trusted CCTV and home automation service provider. 8+ years experience, 5000+ happy customers, 24/7 support.',
   },
 };
 
 export default function AboutPage() {
   const stats = [
     { icon: Users, value: '5000+', label: 'Happy Customers' },
-    { icon: Award, value: '5+', label: 'Years Experience' },
+    { icon: Award, value: '8+', label: 'Years Experience' },
     { icon: Shield, value: '1000+', label: 'Systems Installed' },
     { icon: Clock, value: '24/7', label: 'Support Available' },
   ];
@@ -59,7 +59,7 @@ export default function AboutPage() {
     {
       name: 'Amit Patel',
       position: 'Service Manager',
-      experience: '5+ years in maintenance',
+      experience: '8+ years in maintenance',
       expertise: 'AMC Services, Repairs'
     },
     {

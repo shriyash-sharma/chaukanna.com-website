@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Shield, Camera, Smartphone, Clock } from 'lucide-react';
+import ServicePageEnhancements from '@/components/ServicePageEnhancements';
 
 export const metadata: Metadata = {
   title: 'CCTV Installation Services in Pune - Professional Camera Setup',
@@ -360,6 +361,7 @@ export default function CCTVInstallationPage() {
           </div>
         </div>
       </section>
+      <ServicePageEnhancements slug="/cctv-installation" />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ServicePageEnhancements from '@/components/ServicePageEnhancements';
 
 export const metadata: Metadata = {
   title: 'Access Control Systems in Pune - Card & Biometric Entry Solutions',
@@ -38,6 +39,7 @@ export default function AccessControlSystemsPage() {
           </a>
         </div>
       </section>
+      <ServicePageEnhancements slug="/access-control-systems" />
     </div>
   );
 }
