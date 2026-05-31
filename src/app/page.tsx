@@ -202,6 +202,12 @@ export default function HomePage() {
         {/* Trust strip */}
         <section className="py-10 sm:py-14 bg-white border-b border-gray-100">
           <div className="container mx-auto px-4">
+            <p className="text-center text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto mb-10 sm:mb-12">
+              Trusted by{' '}
+              <span className="font-bold text-orange-600">5000+ customers</span> for reliable
+              security solutions. From CCTV installation to smart home automation, we provide
+              comprehensive security services across Pune.
+            </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
               {trustSignals.map((s) => (
                 <div key={s.label} className="text-center">

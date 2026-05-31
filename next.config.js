@@ -1,41 +1,42 @@
 /** @type {import('next').NextConfig} */
-const withPWA = require('next-pwa')({
+const withPWA = require('@ducanh2912/next-pwa').default({
   dest: 'public',
   register: true,
   skipWaiting: true,
   disable: process.env.NODE_ENV === 'development',
   buildExcludes: [/middleware-manifest\.json$/],
-  runtimeCaching: [
-    {
-      // Cache same-origin pages with stale-while-revalidate
-      urlPattern: ({ request, url }) =>
-        url.origin === self.location.origin && request.destination === 'document',
-      handler: 'NetworkFirst',
-      options: {
-        cacheName: 'pages-cache',
-        expiration: { maxEntries: 50, maxAgeSeconds: 60 * 60 * 24 * 7 },
+  workboxOptions: {
+    runtimeCaching: [
+      {
+        // Cache same-origin pages with stale-while-revalidate
+        urlPattern: ({ request, url }) =>
+          url.origin === self.location.origin && request.destination === 'document',
+        handler: 'NetworkFirst',
+        options: {
+          cacheName: 'pages-cache',
+          expiration: { maxEntries: 50, maxAgeSeconds: 60 * 60 * 24 * 7 },
+        },
       },
-    },
-    {
-      // Cache static images (incl. our /icons)
-      urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp|ico)$/i,
-      handler: 'CacheFirst',
-      options: {
-        cacheName: 'image-cache',
-        expiration: { maxEntries: 200, maxAgeSeconds: 60 * 60 * 24 * 30 },
+      {
+        // Cache static images (incl. our /icons)
+        urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp|ico)$/i,
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'image-cache',
+          expiration: { maxEntries: 200, maxAgeSeconds: 60 * 60 * 24 * 30 },
+        },
       },
-    },
-    {
-      // Catch-all
-      urlPattern: /^https?.*/,
-      handler: 'NetworkFirst',
-      options: {
-        cacheName: 'offline-cache',
-        expiration: { maxEntries: 200 },
+      {
+        // Catch-all
+        urlPattern: /^https?.*/,
+        handler: 'NetworkFirst',
+        options: {
+          cacheName: 'offline-cache',
+          expiration: { maxEntries: 200 },
+        },
       },
-    },
-  ],
-  sw: process.env.NODE_ENV === 'development' ? false : 'sw.js',
+    ],
+  },
 });
 
 const nextConfig = {
@@ -52,9 +53,6 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: ['lucide-react'],
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
   },
   async headers() {
     return [
