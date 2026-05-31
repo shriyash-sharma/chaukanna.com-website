@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { CheckCircle, Fingerprint, Users, Clock, Shield } from 'lucide-react';
+import ServicePageEnhancements from '@/components/ServicePageEnhancements';
 
 export const metadata: Metadata = {
   title: 'Biometric Attendance Systems in Pune - Fingerprint & Face Recognition',
@@ -44,6 +45,7 @@ export default function BiometricAttendancePage() {
           </a>
         </div>
       </section>
+      <ServicePageEnhancements slug="/biometric-attendance" />
     </div>
   );
 }

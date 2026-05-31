@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { CheckCircle, Home, Smartphone, Wifi, Shield, Lightbulb } from 'lucide-react';
+import ServicePageEnhancements from '@/components/ServicePageEnhancements';
 
 export const metadata: Metadata = {
   title: 'Smart Home Automation in Pune - Complete Home Control Solutions',
@@ -340,6 +341,7 @@ export default function SmartHomeAutomationPage() {
           </div>
         </div>
       </section>
+      <ServicePageEnhancements slug="/smart-home-automation" />
     </div>
   );
 }

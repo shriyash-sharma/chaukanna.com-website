@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, MessageCircle, Send } from 'lucide-react';
+import { trackEvent } from '@/lib/analytics';
 // import { submitContactForm } from '@/lib/supabase';
 
 export default function ContactForm() {
@@ -40,6 +41,10 @@ export default function ContactForm() {
       const result = await response.json();
 
       if (response.ok) {
+        trackEvent('contact_form_submit', {
+          source: 'contact_page',
+          service: formData.service || undefined,
+        });
         setSubmitStatus('success');
         setFormData({
           name: '',
@@ -62,7 +67,7 @@ export default function ContactForm() {
     {
       icon: Phone,
       title: 'Phone',
-      details: ['+91 70209 48981', '+91 83906 96046'],
+      details: ['+91 88886 96046', '+91 83906 96046'],
       action: 'tel:+918888696046'
     },
     {

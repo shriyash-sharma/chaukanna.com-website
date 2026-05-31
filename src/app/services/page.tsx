@@ -83,10 +83,10 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-orange-600 font-bold text-2xl">5+</span>
+                <span className="text-orange-600 font-bold text-2xl">8+</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Years Experience</h3>
-              <p className="text-gray-600">Over 5 years of expertise in security systems</p>
+              <p className="text-gray-600">Over 8 years of expertise in security systems</p>
             </div>
             
             <div className="text-center">

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
-import { BRAND_ASSETS, SITE } from '@/lib/branding';
+import { Phone, Mail, MapPin, Clock, Star, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { BRAND_ASSETS, SITE, GOOGLE_PROFILE_URL } from '@/lib/branding';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,6 +10,12 @@ export default function Footer() {
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
     { name: 'Services', href: '/services' },
+    { name: 'Projects', href: '/projects' },
+    { name: 'Service Areas', href: '/service-areas' },
+    { name: 'CCTV Cost Calculator', href: '/cctv-cost-calculator' },
+    { name: 'FAQs', href: '/faqs' },
+    { name: 'Reviews', href: '/reviews' },
+    { name: 'Book Free Site Survey', href: '/book-site-survey' },
     { name: 'Blog', href: '/blog' },
     { name: 'Contact', href: '/contact' },
   ];
@@ -53,9 +59,18 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Professional CCTV installation, AMC, fire alarm systems, and smart home automation services in Pune. 
-              Trusted by 5000+ customers for reliable security solutions.
+              Professional CCTV installation, AMC, fire alarm, biometric attendance, smart home and access control across Pune. Trusted by 5000+ customers. Free site survey, same-day response, GST-billed work with 1-year service warranty.
             </p>
+            <a
+              href={GOOGLE_PROFILE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg px-3 py-2 text-sm text-gray-200 transition-colors"
+              aria-label="See Chaukanna on Google"
+            >
+              <Star className="w-4 h-4 text-yellow-400 fill-current" aria-hidden />
+              See us on Google
+            </a>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <a
@@ -119,7 +134,7 @@ export default function Footer() {
               <div className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-orange-400 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-300 text-sm">+91 70209 48981</p>
+                  <p className="text-gray-300 text-sm">+91 88886 96046</p>
                   <p className="text-gray-300 text-sm">+91 83906 96046</p>
                 </div>
               </div>

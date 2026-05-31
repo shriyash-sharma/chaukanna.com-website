@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import ServicePageEnhancements from '@/components/ServicePageEnhancements';
 
 export const metadata: Metadata = {
   title: 'Repair & Maintenance Services in Pune - CCTV & Security Systems',
@@ -38,6 +39,7 @@ export default function RepairMaintenancePage() {
           </a>
         </div>
       </section>
+      <ServicePageEnhancements slug="/repair-maintenance" />
     </div>
   );
 }

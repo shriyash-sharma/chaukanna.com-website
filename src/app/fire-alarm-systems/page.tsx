@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { CheckCircle, Flame, Shield, AlertTriangle, Phone } from 'lucide-react';
+import ServicePageEnhancements from '@/components/ServicePageEnhancements';
 
 export const metadata: Metadata = {
   title: 'Fire Alarm Systems Installation in Pune - Professional Fire Safety Solutions',
@@ -295,6 +296,7 @@ export default function FireAlarmSystemsPage() {
           </div>
         </div>
       </section>
+      <ServicePageEnhancements slug="/fire-alarm-systems" />
     </div>
   );
 }

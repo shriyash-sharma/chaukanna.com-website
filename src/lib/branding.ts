@@ -11,9 +11,9 @@ export const SITE = {
   legalName: 'Chaukanna By Shri CCTV & Home Automation Services',
   tagline: 'By Shri CCTV & Home Automation Services',
   description:
-    'Professional CCTV installation, AMC, fire alarm systems, biometric attendance, and smart home automation services in Pune. Trusted by 5000+ customers.',
+    'Trusted by 5000+ customers across Pune for professional CCTV installation, AMC, fire alarm systems, biometric attendance, access control, and smart home automation. Serving Wagholi, Kharadi, Hadapsar, Hinjewadi and PCMC. Free site survey, same-day installation, transparent pricing.',
   shortDescription:
-    'Professional CCTV installation, AMC, fire alarm systems, biometric attendance, and smart home automation services in Pune.',
+    'Trusted by 5000+ customers across Pune for CCTV, fire alarm, biometric and smart home automation services.',
   url: 'https://chaukanna.com',
   locale: 'en_IN',
   themeColor: '#f97316',
@@ -66,6 +66,7 @@ export const STRUCTURED_DATA_LOGO = `${SITE.url}${BRAND_ASSETS.png[512]}`;
 
 /**
  * Next.js Metadata `icons` block. Imported by `app/layout.tsx`.
+ * Note: Not `as const` so the arrays are mutable, satisfying Next's `Icon[]` type.
  */
 export const METADATA_ICONS = {
   icon: [
@@ -88,7 +89,7 @@ export const METADATA_ICONS = {
       color: SITE.themeColor,
     },
   ],
-} as const;
+};
 
 /**
  * Schema.org Organization JSON-LD payload.
@@ -114,3 +115,26 @@ export const ORGANIZATION_JSON_LD = {
   },
   sameAs: [] as string[],
 } as const;
+
+/**
+ * External integrations — env-driven so the same code ships across envs.
+ *
+ * NEXT_PUBLIC_GOOGLE_REVIEW_URL  — Full Google Business Profile review link
+ *                                  (e.g. https://g.page/r/.../review).
+ *                                  Falls back to a Google Maps search URL.
+ * NEXT_PUBLIC_GOOGLE_PROFILE_URL — GMB profile page (optional, for "View on Google").
+ * NEXT_PUBLIC_GSC_VERIFICATION   — Google Search Console verification token.
+ */
+const FALLBACK_REVIEW_URL =
+  'https://www.google.com/maps/search/?api=1&query=Chaukanna+CCTV+Pune';
+
+export const GOOGLE_REVIEW_URL: string =
+  process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL || FALLBACK_REVIEW_URL;
+
+export const GOOGLE_PROFILE_URL: string =
+  process.env.NEXT_PUBLIC_GOOGLE_PROFILE_URL || GOOGLE_REVIEW_URL;
+
+export const GSC_VERIFICATION: string =
+  process.env.NEXT_PUBLIC_GSC_VERIFICATION ||
+  'rBKh6dBI9PmsrIK_jb0ZWPdjPZuR35UElpPxsSYvu8g';
+

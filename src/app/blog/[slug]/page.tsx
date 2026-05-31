@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, User, ArrowLeft, ArrowRight, Share2 } from 'lucide-react';
 import { getBlogPostBySlug, getRelatedPosts, getAllBlogPosts } from '@/data/blogPosts';
+import PageTracker from '@/components/PageTracker';
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -48,6 +49,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <div className="min-h-screen bg-white">
+      <PageTracker
+        event="blog_post_view"
+        params={{ slug: post.slug, tags: (post.tags || []).join(',') }}
+      />
       {/* Article Header */}
       <section className="bg-gradient-to-br from-orange-50 to-orange-100 py-20">
         <div className="container mx-auto px-4">
