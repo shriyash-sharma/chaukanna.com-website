@@ -37,7 +37,7 @@ export default function ServicePageEnhancements({
       <Script
         id={`service-schema-${entry.slug.replace(/\W+/g, '-')}`}
         type="application/ld+json"
-        strategy="afterInteractive"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <PageTracker

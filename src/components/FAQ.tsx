@@ -69,7 +69,7 @@ export default function FAQ({
         <Script
           id={schemaId}
           type="application/ld+json"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(buildFAQSchema(items)),
           }}
