@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+<circle cx="512" cy="512" r="500" fill="white" stroke="#0f172a" stroke-width="12"/>
+<path d="M280 300 L512 180 L744 300 L744 540 C744 700 620 810 512 860 C404 810 280 700 280 540 Z" fill="none" stroke="#0f172a" stroke-width="28"/>
+<circle cx="512" cy="480" r="120" fill="none" stroke="#f59e0b" stroke-width="28"/>
+<circle cx="512" cy="480" r="55" fill="#0f172a"/>
+<text x="512" y="930" text-anchor="middle" font-size="90" font-family="Arial" fill="#0f172a">CHAUKANNA</text>
+</svg>

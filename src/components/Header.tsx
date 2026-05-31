@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
+import { BRAND_ASSETS, SITE } from '@/lib/branding';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -59,13 +61,18 @@ export default function Header() {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">C</span>
-            </div>
+          <Link href="/" className="flex items-center space-x-2" aria-label={`${SITE.name} home`}>
+            <Image
+              src={BRAND_ASSETS.logoSvg}
+              alt={`${SITE.legalName} logo`}
+              width={40}
+              height={40}
+              priority
+              className="w-10 h-10"
+            />
             <div>
-              <h1 className="text-xl font-bold text-gray-900">Chaukanna</h1>
-              <p className="text-sm text-gray-600">By Shri CCTV & Home Automation Services</p>
+              <h1 className="text-xl font-bold text-gray-900">{SITE.name}</h1>
+              <p className="text-sm text-gray-600">{SITE.tagline}</p>
             </div>
           </Link>
 

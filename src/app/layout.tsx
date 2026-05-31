@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
@@ -6,49 +6,68 @@ import Footer from '@/components/Footer';
 import FloatingButtons from '@/components/FloatingButtons';
 import { Analytics } from '@vercel/analytics/react';
 import Script from 'next/script';
+import {
+  SITE,
+  METADATA_ICONS,
+  SOCIAL_SHARE_IMAGE,
+  ORGANIZATION_JSON_LD,
+} from '@/lib/branding';
 
 const inter = Inter({ subsets: ['latin'] });
 
+export const viewport: Viewport = {
+  themeColor: SITE.themeColor,
+};
+
 export const metadata: Metadata = {
   title: {
-    default: 'Chaukanna - By Shri CCTV & Home Automation Services Services in Pune',
-    template: '%s | Chaukanna By Shri CCTV & Home Automation Services'
+    default: `${SITE.name} - ${SITE.tagline} in Pune`,
+    template: `%s | ${SITE.legalName}`,
   },
-  description: 'Professional CCTV installation, AMC, fire alarm systems, biometric attendance, and smart home automation services in Pune. Trusted by 5000+ customers.',
-  keywords: 'CCTV installation Pune, home automation Pune, fire alarm systems, biometric attendance, video door phone, access control, public address systems',
-  authors: [{ name: 'Chaukanna By Shri CCTV & Home Automation Services' }],
-  creator: 'Chaukanna By Shri CCTV & Home Automation Services',
-  publisher: 'Chaukanna By Shri CCTV & Home Automation Services',
+  description: SITE.description,
+  keywords:
+    'CCTV installation Pune, home automation Pune, fire alarm systems, biometric attendance, video door phone, access control, public address systems',
+  applicationName: SITE.name,
+  authors: [{ name: SITE.legalName }],
+  creator: SITE.legalName,
+  publisher: SITE.legalName,
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://chaukanna.com'),
+  metadataBase: new URL(SITE.url),
   alternates: {
     canonical: '/',
   },
+  manifest: '/manifest.json',
+  icons: METADATA_ICONS,
+  appleWebApp: {
+    capable: true,
+    title: SITE.name,
+    statusBarStyle: 'default',
+  },
   openGraph: {
     type: 'website',
-    locale: 'en_IN',
-    url: 'https://chaukanna.com',
-    title: 'Chaukanna - By Shri CCTV & Home Automation Services Services in Pune',
-    description: 'Professional CCTV installation, AMC, fire alarm systems, biometric attendance, and smart home automation services in Pune.',
-    siteName: 'Chaukanna',
+    locale: SITE.locale,
+    url: SITE.url,
+    title: `${SITE.name} - ${SITE.tagline} in Pune`,
+    description: SITE.shortDescription,
+    siteName: SITE.name,
     images: [
       {
-        url: '/images/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Chaukanna By Shri CCTV & Home Automation Services Services',
+        url: SOCIAL_SHARE_IMAGE.url,
+        width: SOCIAL_SHARE_IMAGE.width,
+        height: SOCIAL_SHARE_IMAGE.height,
+        alt: SOCIAL_SHARE_IMAGE.alt,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Chaukanna - By Shri CCTV & Home Automation Services Services in Pune',
-    description: 'Professional CCTV installation, AMC, fire alarm systems, biometric attendance, and smart home automation services in Pune.',
-    images: ['/images/og-image.jpg'],
+    title: `${SITE.name} - ${SITE.tagline} in Pune`,
+    description: SITE.shortDescription,
+    images: [SOCIAL_SHARE_IMAGE.url],
   },
   robots: {
     index: true,
@@ -73,37 +92,43 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#f97316" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Chaukanna" />
-        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-192x192.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-192x192.png" />
-        
-        {/* Google Analytics */}
-        {process.env.NEXT_PUBLIC_GA_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
-              `}
-            </Script>
-          </>
-        )}
+      <body className={inter.className}>
+        {/* Organization structured data */}
+        <Script
+          id="organization-jsonld"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(ORGANIZATION_JSON_LD),
+          }}
+        />
+
+        {/* Google Analytics (GA4) */}
+        {(() => {
+          const gaId = process.env.NEXT_PUBLIC_GA_ID || 'G-Q1LSVKTZ2F';
+          return (
+            <>
+              <Script
+                src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+                strategy="afterInteractive"
+              />
+              <Script id="google-analytics" strategy="afterInteractive">
+                {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${gaId}');
+                `}
+              </Script>
+            </>
+          );
+        })()}
 
         {/* Tawk.to Script */}
         {process.env.NEXT_PUBLIC_TAWK_ID && (
-          <script
+          <Script
+            id="tawk-to"
+            strategy="afterInteractive"
             dangerouslySetInnerHTML={{
               __html: `
                 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -119,8 +144,7 @@ export default function RootLayout({
             }}
           />
         )}
-      </head>
-      <body className={inter.className}>
+
         <Header />
         <main>{children}</main>
         <Footer />
