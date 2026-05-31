@@ -74,7 +74,7 @@ export function trackEvent(
 }
 
 export const PHONE_NUMBER = '+918888696046';
-export const WHATSAPP_NUMBER = '918888696046';
+export const WHATSAPP_NUMBER = '917697012040';
 export const WHATSAPP_DEFAULT_MESSAGE =
   'Hi Chaukanna, I am interested in your CCTV and home automation services.';
 

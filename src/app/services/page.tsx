@@ -127,7 +127,7 @@ export default function ServicesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/918888696046"
+              href="https://wa.me/917697012040"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white text-orange-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-lg"

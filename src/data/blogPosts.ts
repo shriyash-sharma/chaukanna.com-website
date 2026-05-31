@@ -490,7 +490,7 @@ Same number of cameras, three different total costs:
 
 ## Get an actual quote for your property
 
-Pricing depends a lot on the layout of your specific property. Send us your address and a few photos on [WhatsApp](https://wa.me/918888696046) and we will reply with a custom quote — no obligation, no follow-up calls.
+Pricing depends a lot on the layout of your specific property. Send us your address and a few photos on [WhatsApp](https://wa.me/917697012040) and we will reply with a custom quote — no obligation, no follow-up calls.
 
 ## FAQs
 
@@ -567,7 +567,7 @@ Most modern recorders (Hikvision, CP Plus, Dahua) are *hybrid* — they accept b
 - **Office, clinic, society, school, factory:** NVR + IP cameras. Worth the extra cost.
 - **Bungalow with monitoring needs:** NVR if you want 4K driveway / gate, otherwise DVR.
 
-Still not sure? Send us your floor plan on [WhatsApp](https://wa.me/918888696046) and we’ll recommend a setup with a price.
+Still not sure? Send us your floor plan on [WhatsApp](https://wa.me/917697012040) and we’ll recommend a setup with a price.
 
 ## FAQs
 
@@ -655,7 +655,7 @@ A few things to put in place:
 
 ## Get a free quote
 
-Drop your shop address and a photo of the counter area on [WhatsApp](https://wa.me/918888696046) and we’ll send a sized quote within 30 minutes.
+Drop your shop address and a photo of the counter area on [WhatsApp](https://wa.me/917697012040) and we’ll send a sized quote within 30 minutes.
 
 ## FAQs
 
@@ -763,7 +763,7 @@ For societies in Maharashtra:
 
 ## Get a society proposal
 
-Share your society name, number of blocks and member-count on [WhatsApp](https://wa.me/918888696046) and we will share a quote-ready proposal you can table at your next committee meeting.
+Share your society name, number of blocks and member-count on [WhatsApp](https://wa.me/917697012040) and we will share a quote-ready proposal you can table at your next committee meeting.
 
 ## FAQs
 
@@ -855,7 +855,7 @@ Avoid: WD Blue / Green, Seagate Barracuda — these are for desktops, not DVRs.
 
 ## Want help sizing?
 
-Tell us your camera count, resolution and target retention days on [WhatsApp](https://wa.me/918888696046) and we’ll size the HDD for you in 2 minutes.
+Tell us your camera count, resolution and target retention days on [WhatsApp](https://wa.me/917697012040) and we’ll size the HDD for you in 2 minutes.
 
 ## FAQs
 
@@ -962,7 +962,7 @@ A hidden camera at your own front door, recording your own porch, is fine. A hid
 
 ## Get a compliance-ready setup
 
-Every system we install in Pune comes with a one-page **CCTV policy template** you can adopt for your home, shop or society. Ask for it when we share your quote on [WhatsApp](https://wa.me/918888696046).
+Every system we install in Pune comes with a one-page **CCTV policy template** you can adopt for your home, shop or society. Ask for it when we share your quote on [WhatsApp](https://wa.me/917697012040).
 
 ## FAQs
 
@@ -1068,7 +1068,7 @@ Fire alarm AMC in Pune typically runs **₹15,000 – ₹60,000 per year** depen
 
 ## Get a sized quote
 
-Share your floor plan or built-up area on [WhatsApp](https://wa.me/918888696046) and we’ll size the system and quote it for you.
+Share your floor plan or built-up area on [WhatsApp](https://wa.me/917697012040) and we’ll size the system and quote it for you.
 
 ## FAQs
 
@@ -1176,7 +1176,7 @@ We mostly install Wiser / Wipro / Syska in Pune homes because they balance cost,
 
 ## Get an honest quote
 
-Share your floor plan and current switch point count on [WhatsApp](https://wa.me/918888696046) and we’ll send you a realistic, line-itemed quote.
+Share your floor plan and current switch point count on [WhatsApp](https://wa.me/917697012040) and we’ll send you a realistic, line-itemed quote.
 
 ## FAQs
 
@@ -1281,7 +1281,7 @@ Before installing:
 
 ## Get a quote
 
-Share your staff count and branch locations on [WhatsApp](https://wa.me/918888696046) and we’ll recommend a device + software combination.
+Share your staff count and branch locations on [WhatsApp](https://wa.me/917697012040) and we’ll recommend a device + software combination.
 
 ## FAQs
 
@@ -1392,7 +1392,7 @@ This replaces the paper visitor register and gives you a clean digital trail.
 
 ## Get a quote
 
-Share number of doors, sensitivity (general / sensitive / server room) and shift pattern on [WhatsApp](https://wa.me/918888696046) and we will share a sized proposal.
+Share number of doors, sensitivity (general / sensitive / server room) and shift pattern on [WhatsApp](https://wa.me/917697012040) and we will share a sized proposal.
 
 ## FAQs
 
@@ -1506,7 +1506,7 @@ A genuine setup with brand cameras, real HDD and proper install lives in **₹16
 
 ## Get an honest quote
 
-Send a photo of your entry door, parking and ground floor on [WhatsApp](https://wa.me/918888696046) and we’ll send a quote with model numbers, no high-pressure follow-up.
+Send a photo of your entry door, parking and ground floor on [WhatsApp](https://wa.me/917697012040) and we’ll send a quote with model numbers, no high-pressure follow-up.
 
 ## FAQs
 
@@ -1615,7 +1615,7 @@ Keep these handy:
 
 ## Need an AMC?
 
-Share your camera count and recorder model on [WhatsApp](https://wa.me/918888696046) and we’ll quote AMC pricing for your setup.
+Share your camera count and recorder model on [WhatsApp](https://wa.me/917697012040) and we’ll quote AMC pricing for your setup.
 
 ## FAQs
 
@@ -1736,7 +1736,7 @@ Most SMB security in India is built piecemeal — a few cameras one year, an att
 
 ## Need help auditing your site?
 
-We do a free physical-security walkthrough across Pune for SMBs. Schedule one on [WhatsApp](https://wa.me/918888696046).
+We do a free physical-security walkthrough across Pune for SMBs. Schedule one on [WhatsApp](https://wa.me/917697012040).
 
 ## FAQs
 
@@ -1837,7 +1837,7 @@ This is a different scale of project — budget ₹5,500–₹12,000 per flat fo
 
 ## Get a quote
 
-Share your door type (apartment / villa / society entry) on [WhatsApp](https://wa.me/918888696046) and we’ll suggest the right VDP model.
+Share your door type (apartment / villa / society entry) on [WhatsApp](https://wa.me/917697012040) and we’ll suggest the right VDP model.
 
 ## FAQs
 
@@ -1956,7 +1956,7 @@ For most Pune residential addresses confirmed before 11 AM, we can survey + inst
 
 ## Want to schedule a survey?
 
-[WhatsApp us](https://wa.me/918888696046) your address and best time and we’ll lock a survey slot.
+[WhatsApp us](https://wa.me/917697012040) your address and best time and we’ll lock a survey slot.
 
 ## FAQs
 
@@ -2072,7 +2072,7 @@ We provide all three brands with verified-genuine paperwork as part of the insta
 
 ## Get a brand-specific quote
 
-Tell us your use case on [WhatsApp](https://wa.me/918888696046) and we’ll quote 2 brand options side-by-side so you can compare.
+Tell us your use case on [WhatsApp](https://wa.me/917697012040) and we’ll quote 2 brand options side-by-side so you can compare.
 
 ## FAQs
 
