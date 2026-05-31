@@ -80,14 +80,9 @@ export async function POST(request: NextRequest) {
       ])
       .select();
 
-    if (fallback.error) {
-      console.error('Site survey insert error:', fallback.error);
-      return NextResponse.json(
-        { error: 'Could not save your request. Please WhatsApp us instead.' },
-        { status: 500 },
-      );
-    }
-
+    // Always fire the email — even if Supabase is down, we should not
+    // lose a lead. The customer's submission becomes a successful response
+    // as long as the notification email is queued.
     void sendSiteSurveyEmail({
       name,
       phone,
@@ -99,6 +94,18 @@ export async function POST(request: NextRequest) {
       preferredTime,
       notes,
     });
+
+    if (fallback.error) {
+      console.error('Site survey: Supabase insert failed for BOTH tables.', {
+        siteSurveysError: error,
+        contactsError: fallback.error,
+      });
+      // Still return success — the email pipeline will deliver the lead.
+      return NextResponse.json(
+        { ok: true, table: 'email_only', warning: 'db_unavailable' },
+        { status: 200 },
+      );
+    }
 
     return NextResponse.json(
       { ok: true, id: fallback.data?.[0]?.id, table: 'contacts_fallback' },

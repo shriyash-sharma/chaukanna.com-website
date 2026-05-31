@@ -13,6 +13,8 @@ import {
   HelpCircle,
   PhoneCall,
   MessageCircle,
+  Star,
+  ExternalLink,
 } from 'lucide-react';
 import { services } from '@/data/services';
 import { LOCATIONS } from '@/data/locations';
@@ -20,7 +22,7 @@ import { buildMetadata, buildFAQSchema } from '@/lib/seo';
 import CTAButtons from '@/components/CTAButtons';
 import EmergencyCTA from '@/components/EmergencyCTA';
 import FAQ from '@/components/FAQ';
-import { SITE } from '@/lib/branding';
+import { SITE, GOOGLE_PROFILE_URL, GOOGLE_RATING } from '@/lib/branding';
 
 export const metadata: Metadata = buildMetadata({
   title: 'CCTV, Fire Alarm & Smart Home Automation Services in Pune',
@@ -202,12 +204,44 @@ export default function HomePage() {
         {/* Trust strip */}
         <section className="py-10 sm:py-14 bg-white border-b border-gray-100">
           <div className="container mx-auto px-4">
-            <p className="text-center text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto mb-10 sm:mb-12">
+            <p className="text-center text-base sm:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto mb-6">
               Trusted by{' '}
               <span className="font-bold text-orange-600">5000+ customers</span> for reliable
               security solutions. From CCTV installation to smart home automation, we provide
               comprehensive security services across Pune.
             </p>
+
+            {/* Google rating badge — real, verifiable, links to GBP */}
+            <div className="flex justify-center mb-10 sm:mb-12">
+              <a
+                href={GOOGLE_PROFILE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-full px-4 py-2 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <span className="text-xl font-bold text-gray-900">
+                  {GOOGLE_RATING.value.toFixed(1)}
+                </span>
+                <span className="flex" aria-label={`${GOOGLE_RATING.value} out of 5`}>
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Star
+                      key={i}
+                      className={`w-4 h-4 ${
+                        i <= Math.round(GOOGLE_RATING.value)
+                          ? 'text-yellow-400 fill-current'
+                          : 'text-gray-300'
+                      }`}
+                      aria-hidden
+                    />
+                  ))}
+                </span>
+                <span className="text-sm text-gray-700">
+                  on Google &middot; {GOOGLE_RATING.count}+ reviews
+                </span>
+                <ExternalLink className="w-4 h-4 text-gray-400" aria-hidden />
+              </a>
+            </div>
+
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
               {trustSignals.map((s) => (
                 <div key={s.label} className="text-center">
