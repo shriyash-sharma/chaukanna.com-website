@@ -2,10 +2,10 @@
 const withPWA = require('@ducanh2912/next-pwa').default({
   dest: 'public',
   register: true,
-  skipWaiting: true,
   disable: process.env.NODE_ENV === 'development',
-  buildExcludes: [/middleware-manifest\.json$/],
   workboxOptions: {
+    skipWaiting: true,
+    buildExcludes: [/middleware-manifest\.json$/],
     runtimeCaching: [
       {
         // Cache same-origin pages with stale-while-revalidate
