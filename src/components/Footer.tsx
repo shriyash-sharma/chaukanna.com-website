@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { BRAND_ASSETS, SITE } from '@/lib/branding';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -38,12 +40,16 @@ export default function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-orange-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">C</span>
-              </div>
+              <Image
+                src={BRAND_ASSETS.logoSvg}
+                alt={`${SITE.legalName} logo`}
+                width={40}
+                height={40}
+                className="w-10 h-10"
+              />
               <div>
-                <h3 className="text-xl font-bold">Chaukanna</h3>
-                <p className="text-sm text-gray-400">By Shri CCTV & Home Automation Services</p>
+                <h3 className="text-xl font-bold">{SITE.name}</h3>
+                <p className="text-sm text-gray-400">{SITE.tagline}</p>
               </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
