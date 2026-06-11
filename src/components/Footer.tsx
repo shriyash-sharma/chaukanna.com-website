@@ -172,15 +172,18 @@ export default function Footer() {
               © {currentYear} Chaukanna By Shri CCTV & Home Automation Services Services. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
-              <Link href="/privacy" className="text-gray-400 hover:text-orange-400 transition-colors">
+              <Link href="/privacy-policy" className="text-gray-400 hover:text-orange-400 transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-orange-400 transition-colors">
+              <Link href="/terms-of-service" className="text-gray-400 hover:text-orange-400 transition-colors">
                 Terms of Service
               </Link>
-              <Link href="/sitemap" className="text-gray-400 hover:text-orange-400 transition-colors">
+              <a
+                href="/sitemap.xml"
+                className="text-gray-400 hover:text-orange-400 transition-colors"
+              >
                 Sitemap
-              </Link>
+              </a>
             </div>
           </div>
         </div>

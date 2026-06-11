@@ -43,7 +43,7 @@ export const CROSS_DOMAIN_STRATEGY = {
     inboundLink: {
       text: 'Learn more about engineering & innovation',
       url: 'https://shriyashsharma.com',
-      anchorText: 'Shriyash Sharma's Portfolio',
+      anchorText: "Shriyash Sharma's Portfolio",
       placement: 'End of section, in bio',
     },
   },

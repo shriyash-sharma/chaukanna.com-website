@@ -177,7 +177,7 @@ export const SIX_MONTH_ROADMAP = {
         priority: 'Q3 — Expansion content',
         items: [
           'Create /security-training (educational resources)',
-          'Develop CCTV buyer's guide (2000+ words)',
+          "Develop CCTV buyer's guide (2000+ words)",
           'Build interactive security risk assessment tool',
         ],
       },

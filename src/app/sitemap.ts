@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     '',
     '/about',
+    '/about/technology',
     '/services',
     '/contact',
     '/blog',
@@ -21,6 +22,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/book-site-survey',
     '/faqs',
     '/reviews',
+    '/home-security-tips',
+    '/cctv-installation-guide',
+    '/privacy-policy',
+    '/terms-of-service',
   ].map((path) => ({
     url: `${SITE.url}${path}`,
     lastModified: now,
