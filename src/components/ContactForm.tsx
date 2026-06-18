@@ -1,9 +1,23 @@
 'use client';
 
 import { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, MessageCircle, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageCircle, Send, type LucideIcon } from 'lucide-react';
 import { trackEvent } from '@/lib/analytics';
 // import { submitContactForm } from '@/lib/supabase';
+
+type ContactInfoItem =
+  | {
+      icon: LucideIcon;
+      title: string;
+      details: string[];
+      action: string | null;
+    }
+  | {
+      icon: LucideIcon;
+      title: string;
+      addressBlocks: string[][];
+      action: string | null;
+    };
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -63,7 +77,7 @@ export default function ContactForm() {
     }
   };
 
-  const contactInfo = [
+  const contactInfo: ContactInfoItem[] = [
     {
       icon: Phone,
       title: 'Phone',
@@ -263,7 +277,17 @@ export default function ContactForm() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-gray-900 mb-2">{info.title}</h3>
-                      {info.action ? (
+                      {'addressBlocks' in info ? (
+                        <div className="text-gray-600">
+                          {info.addressBlocks.map((block, blockIdx) => (
+                            <div key={blockIdx} className={blockIdx > 0 ? 'mt-6' : ''}>
+                              {block.map((line, idx) => (
+                                <div key={idx}>{line}</div>
+                              ))}
+                            </div>
+                          ))}
+                        </div>
+                      ) : info.action ? (
                         <a
                           href={info.action}
                           className="text-gray-600 hover:text-orange-600 transition-colors"
@@ -326,7 +350,11 @@ export default function ContactForm() {
               <div className="text-center">
                 <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-gray-700 mb-2">Interactive Map</h3>
-                <p className="text-gray-600 mb-4">Shop No 13, Satya Plaza Building, Pune, Maharashtra 412207</p>
+                <div className="text-gray-600 mb-4 space-y-6">
+                  <p>Shop No 13, Satya Plaza Building, Khandve Nagar, Wagholi, Pune, Maharashtra 412207</p>
+                  <p>Sr.no 95/1, Mauli Park, Wagholi Rd, Yojna Nagar, Lohegaon, Pune, Maharashtra 411047</p>
+                  <p>Mohmmad Wadi road Hadapsar Mohammad wadi road, Undri - Hadapsar Rd, sathe nagar, Pune, Maharashtra 411060</p>
+                </div>
                 <a
                   href="https://maps.google.com/?q=Pune+Maharashtra"
                   target="_blank"
