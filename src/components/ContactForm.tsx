@@ -78,8 +78,12 @@ export default function ContactForm() {
     },
     {
       icon: MapPin,
-      title: 'Address',
-      details: ['Shop No 13, Satya Plaza Building,', 'Khandve Nagar, Wagholi, Pune, Maharashtra 412207'],
+      title: 'Addresses',
+      addressBlocks: [
+        ['Shop No 13, Satya Plaza Building,', 'Khandve Nagar, Wagholi, Pune, Maharashtra 412207'],
+        ['Sr.no 95/1, Mauli Park, Wagholi Rd, Yojna Nagar, Lohegaon, Pune, Maharashtra 411047'],
+        ['Mohmmad Wadi road Hadapsar Mohammad wadi road, Undri - Hadapsar Rd, sathe nagar, Pune, Maharashtra 411060'],
+      ],
       action: 'https://maps.google.com/?q=Pune+Maharashtra'
     },
     {
