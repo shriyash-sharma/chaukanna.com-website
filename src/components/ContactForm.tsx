@@ -7,17 +7,17 @@ import { trackEvent } from '@/lib/analytics';
 
 type ContactInfoItem =
   | {
-      icon: LucideIcon;
-      title: string;
-      details: string[];
-      action: string | null;
-    }
+    icon: LucideIcon;
+    title: string;
+    details: string[];
+    action: string | null;
+  }
   | {
-      icon: LucideIcon;
-      title: string;
-      addressBlocks: string[][];
-      action: string | null;
-    };
+    icon: LucideIcon;
+    title: string;
+    addressBlocks: string[][];
+    action: string | null;
+  };
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -96,7 +96,7 @@ export default function ContactForm() {
       addressBlocks: [
         ['Shop No 13, Satya Plaza Building,', 'Khandve Nagar, Wagholi, Pune, Maharashtra 412207'],
         ['Sr.no 95/1, Mauli Park, Wagholi Rd, Yojna Nagar, Lohegaon, Pune, Maharashtra 411047'],
-        ['Mohmmad Wadi road Hadapsar Mohammad wadi road, Undri - Hadapsar Rd, sathe nagar, Pune, Maharashtra 411060'],
+        ['Taluka Haveli, Sarvy no 93,', 'Sathenagar Pune(B, Taravade vasti), Pune, Maharashtra 411060'],
       ],
       action: 'https://maps.google.com/?q=Pune+Maharashtra'
     },
@@ -143,13 +143,13 @@ export default function ContactForm() {
             {/* Contact Form */}
             <div className="bg-white rounded-2xl shadow-2xl p-8">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Get Free Quote</h2>
-              
+
               {submitStatus === 'success' && (
                 <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg mb-6">
                   Thank you! Your message has been sent successfully. We&apos;ll get back to you within 24 hours.
                 </div>
               )}
-              
+
               {submitStatus === 'error' && (
                 <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg mb-6">
                   Sorry, there was an error sending your message. Please try again or call us directly.
@@ -264,7 +264,7 @@ export default function ContactForm() {
               <div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
                 <p className="text-lg text-gray-600 mb-8">
-                  We&apos;re here to help you with all your security and automation needs. 
+                  We&apos;re here to help you with all your security and automation needs.
                   Reach out to us through any of the following channels.
                 </p>
               </div>
@@ -344,7 +344,7 @@ export default function ContactForm() {
               Located in the heart of Pune, our office is easily accessible and ready to serve you
             </p>
           </div>
-          
+
           <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
             <div className="h-96 bg-gray-200 flex items-center justify-center">
               <div className="text-center">
@@ -353,7 +353,7 @@ export default function ContactForm() {
                 <div className="text-gray-600 mb-4 space-y-6">
                   <p>Shop No 13, Satya Plaza Building, Khandve Nagar, Wagholi, Pune, Maharashtra 412207</p>
                   <p>Sr.no 95/1, Mauli Park, Wagholi Rd, Yojna Nagar, Lohegaon, Pune, Maharashtra 411047</p>
-                  <p>Mohmmad Wadi road Hadapsar Mohammad wadi road, Undri - Hadapsar Rd, sathe nagar, Pune, Maharashtra 411060</p>
+                  <p>Taluka Haveli, Sarvy no 93, Sathenagar Pune(B, Taravade vasti), Pune, Maharashtra 411060</p>
                 </div>
                 <a
                   href="https://maps.google.com/?q=Pune+Maharashtra"
@@ -378,7 +378,7 @@ export default function ContactForm() {
               Quick answers to common questions about our services
             </p>
           </div>
-          
+
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
               <div className="bg-gray-50 rounded-lg p-6">
@@ -386,37 +386,37 @@ export default function ContactForm() {
                   How quickly can you provide a quote?
                 </h3>
                 <p className="text-gray-600">
-                  We typically provide detailed quotes within 24 hours of receiving your inquiry. 
+                  We typically provide detailed quotes within 24 hours of receiving your inquiry.
                   For urgent requirements, we can provide preliminary estimates within 2-4 hours.
                 </p>
               </div>
-              
+
               <div className="bg-gray-50 rounded-lg p-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   Do you offer free site surveys?
                 </h3>
                 <p className="text-gray-600">
-                  Yes, we provide free site surveys for all potential projects. Our expert team 
+                  Yes, we provide free site surveys for all potential projects. Our expert team
                   will visit your location to assess requirements and provide accurate recommendations.
                 </p>
               </div>
-              
+
               <div className="bg-gray-50 rounded-lg p-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   What is your service area in Pune?
                 </h3>
                 <p className="text-gray-600">
-                  We serve all areas of Pune including Baner, Koregaon Park, Hinjewadi, Wakad, 
+                  We serve all areas of Pune including Baner, Koregaon Park, Hinjewadi, Wakad,
                   Aundh, and surrounding areas. Contact us to confirm service availability in your area.
                 </p>
               </div>
-              
+
               <div className="bg-gray-50 rounded-lg p-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   Do you provide warranty on installations?
                 </h3>
                 <p className="text-gray-600">
-                  Yes, we provide comprehensive warranties on all our installations. Equipment 
+                  Yes, we provide comprehensive warranties on all our installations. Equipment
                   warranty varies by manufacturer, and we offer additional service warranties for our work.
                 </p>
               </div>
